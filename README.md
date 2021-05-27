@@ -51,5 +51,64 @@ kubectl create secret generic tigera-pull-secret --type=kubernetes.io/dockerconf
 
 <img width="1292" alt="Screenshot 2021-05-27 at 13 22 34" src="https://user-images.githubusercontent.com/82048393/119825258-ad110600-beee-11eb-83a2-efc05f85bf29.png">
 
+Install the Tigera custom resources
+
+```
+kubectl create -f https://docs.tigera.io/manifests/custom-resources.yaml
+```
+
+<img width="890" alt="Screenshot 2021-05-27 at 13 24 22" src="https://user-images.githubusercontent.com/82048393/119825582-0416db00-beef-11eb-86d1-3d7184fb0264.png">
+
+
+Monitor progress with the following command.
+Once the 'apiserver' is running, feel free to proceed
+```
+watch kubectl get tigerastatus
+```
+
+<img width="627" alt="Screenshot 2021-05-27 at 13 26 39" src="https://user-images.githubusercontent.com/82048393/119825803-40e2d200-beef-11eb-895a-36b0ca7ae60c.png">
+
+Apply the license file - provided to you by the team at Tigera.
+```
+kubectl apply -f license.yaml
+```
+
+To check on the status of pods in creation, run the below command:
+```
+kubectl get pods -A
+```
+
+<img width="1071" alt="Screenshot 2021-05-27 at 13 28 16" src="https://user-images.githubusercontent.com/82048393/119826758-47be1480-bef0-11eb-8be4-4b9b4d91033b.png">
+
+
+If you're seeing slow changes in 'watch tigerastatus', you can 'describe' a pod to see what is happening:
+```
+kubectl describe pod tigera-manager-79c79478cc-rsj7j -n tigera-manager
+```
+
+<img width="1299" alt="Screenshot 2021-05-27 at 13 29 51" src="https://user-images.githubusercontent.com/82048393/119826881-658b7980-bef0-11eb-8195-184dae8da2e7.png">
+
+There was no issue identified in 'kubectl describe'.
+Finally, confirm all processes are now running successfully.
+
+```
+watch kubectl get tigerastatus
+```
+
+<img width="554" alt="Screenshot 2021-05-27 at 13 30 24" src="https://user-images.githubusercontent.com/82048393/119827027-953a8180-bef0-11eb-80ce-57e5a4297b6f.png">
+
+
+To secure Calico Enterprise component communications, install this set of network policies
+
+```
+kubectl create -f https://docs.tigera.io/manifests/tigera-policies.yaml
+```
+
+<img width="866" alt="Screenshot 2021-05-27 at 13 37 33" src="https://user-images.githubusercontent.com/82048393/119827293-e185c180-bef0-11eb-9fd8-0fea3c2b9912.png">
+
+To expose the manager using a load balancer, create the following service
+```
+kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/netpolTest/main/sc/lb.yaml
+```
 
 
