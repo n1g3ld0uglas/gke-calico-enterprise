@@ -111,4 +111,8 @@ To expose the manager using a load balancer, create the following service
 kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/netpolTest/main/sc/lb.yaml
 ```
 
-
+The load balancer service might show an IP address of <pending>. This can take 1-2 minutes to show-up
+    
+```
+kubectl get services -n tigera-manager tigera-manager-external
+```
