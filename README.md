@@ -118,15 +118,13 @@ This can take 1-2 minutes to show-up
 kubectl get services -n tigera-manager tigera-manager-external
 ```
 
-<img width="649" alt="119829212-e9defc00-bef2-11eb-83b0-17953114a7da" src="https://user-images.githubusercontent.com/82048393/119838083-07b05f00-befb-11eb-8f7e-b128833bd952.png">
-
 
 <img width="1023" alt="Screenshot 2021-05-27 at 13 43 45" src="https://user-images.githubusercontent.com/82048393/119828653-48f04100-bef2-11eb-9dd3-a0a534e1fed0.png">
 
 This will the PUBLIC-IP:PORT(9443) will only get us as far as a login page.
 However, to proceeed we will need to create our service account for login.
 
-<img width="1088" alt="Screenshot 2021-05-27 at 13 52 34" src="https://user-images.githubusercontent.com/82048393/119829212-e9defc00-bef2-11eb-83b0-17953114a7da.png">
+<img width="649" alt="119829212-e9defc00-bef2-11eb-83b0-17953114a7da" src="https://user-images.githubusercontent.com/82048393/119838083-07b05f00-befb-11eb-8f7e-b128833bd952.png">
 
 
 First, create a service account in the desired namespace    
