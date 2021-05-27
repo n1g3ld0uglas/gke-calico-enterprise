@@ -164,9 +164,13 @@ kubectl -n tigera-elasticsearch get secret tigera-secure-es-elastic-user -o go-t
 
 
 If you want to temporarily shutdown your GKE cluster (to reduce costs), you can resize the cluster to 0 nodes:
+This can take 2-3 minutes to complete the cluster rescaling.
 ```
 gcloud container clusters resize nigel-gke-cluster --zone=europe-west2-a --num-nodes=0
 ```
+
+<img width="1300" alt="Screenshot 2021-05-27 at 15 53 45" src="https://user-images.githubusercontent.com/82048393/119848834-0b94af00-bf04-11eb-9f0f-ab751d297451.png">
+
 
 Similarly, when you need to work on this test cluster again, you can re-scale the cluster back to the 3 nodes:
 ```
