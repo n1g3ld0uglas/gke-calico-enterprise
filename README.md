@@ -143,8 +143,19 @@ kubectl get secret $(kubectl get serviceaccount nigel -o jsonpath='{range .secre
 
 <img width="1297" alt="Screenshot 2021-05-27 at 13 55 32" src="https://user-images.githubusercontent.com/82048393/119829692-6a056180-bef3-11eb-903d-df7012d51362.png">
 
+Paste the base64 encoded output token in the Calico Enterprise login window:
+
+<img width="519" alt="Screenshot 2021-05-27 at 13 57 41" src="https://user-images.githubusercontent.com/82048393/119829994-ba7cbf00-bef3-11eb-816d-204dfc835396.png">
+
+Since you installed a bunch of policies earlier, you should see those under the 'allow-tigera' tier.
+We will come back to the concept of tiers shortly.
+
+<img width="622" alt="Screenshot 2021-05-27 at 14 00 26" src="https://user-images.githubusercontent.com/82048393/119830378-1e06ec80-bef4-11eb-9f01-7083532b97a7.png">
+
 
 Connect to Kibana with the 'elastic' username
 ```
 kubectl -n tigera-elasticsearch get secret tigera-secure-es-elastic-user -o go-template='{{.data.elastic | base64decode}}' && echo   
 ``` 
+
+
