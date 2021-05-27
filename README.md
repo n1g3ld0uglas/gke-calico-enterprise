@@ -155,8 +155,20 @@ We will come back to the concept of tiers shortly.
 
 
 Connect to Kibana with the 'elastic' username
+You can access this via your PUBLIC:IP/PORT(9443)
 ```
 kubectl -n tigera-elasticsearch get secret tigera-secure-es-elastic-user -o go-template='{{.data.elastic | base64decode}}' && echo   
 ``` 
 
+<img width="501" alt="Screenshot 2021-05-27 at 15 48 18" src="https://user-images.githubusercontent.com/82048393/119847657-113dc500-bf03-11eb-8ee7-058554e5e3bf.png">
 
+
+If you want to temporarily shutdown your GKE cluster (to reduce costs), you can resize the cluster to 0 nodes:
+```
+gcloud container clusters resize nigel-gke-cluster --zone=europe-west2-a --num-nodes=0
+```
+
+Similarly, when you need to work on this test cluster again, you can re-scale the cluster back to the 3 nodes:
+```
+gcloud container clusters resize nigel-gke-cluster --zone=europe-west2-a --num-nodes=3
+```
