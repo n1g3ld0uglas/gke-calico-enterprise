@@ -223,10 +223,19 @@ kubectl apply -f https://installer.calicocloud.io/storefront-demo.yaml
 
 Once created, create the ```attacker-app``` pod in the ```storefront``` namespace
 ```
-kubectl delete -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
+kubectl create -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 ```
 
-This will attempt to probe as many pods as possible - including the ```tigera-internal``` namespaced pods
+This will attempt to probe as many pods as possible - including the ```tigera-internal``` namespaced pods 
+
+![Screenshot 2021-12-06 at 11 11 07](https://user-images.githubusercontent.com/82048393/144836394-6cdfbbbc-97fd-4110-ae4b-eb418b9f2141.png)
+
+
+
+Confirm the new attacker app exists within the Storefront namespace:
+```
+kubectl get storefront -A
+```
 
 
 ## Miscellaneous Junk
