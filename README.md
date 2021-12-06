@@ -177,16 +177,31 @@ Similarly, when you need to work on this test cluster again, you can re-scale th
 gcloud container clusters resize nigel-gke-cluster --zone=europe-west2-a --num-nodes=3
 ```
 
-
+```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/common.yaml 
+```
+```
 kubectl create secret generic tigera-pull-secret --from-file=.dockerconfigjson=config.json --type=kubernetes.io/dockerconfigjson -n tigera-internal
+```
+```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/ip-enum.yaml 
+```
+```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/expose-svc.yaml 
+```
+```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/vuln-svc.yaml 
+```
+```
 kubectl get pods -n tigera-internal
+```
+```
 kubectl get globalalerts
+```
+```
 kubectl delete secret tigera-pull-secret -n tigera-internal
-
+```
+```
 
 
 
