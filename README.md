@@ -206,8 +206,10 @@ kubectl get globalalerts
 ```
 kubectl delete secret tigera-pull-secret -n tigera-internal
 ```
-```
 
+
+
+![Screenshot 2021-12-06 at 11 01 08](https://user-images.githubusercontent.com/82048393/144835168-86485383-7d82-4b0a-8cd7-8e1b16c783f3.png)
 
 
 
