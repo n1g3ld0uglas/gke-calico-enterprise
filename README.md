@@ -214,9 +214,19 @@ kubectl delete secret tigera-pull-secret -n tigera-internal
 
 
 
+## Trigger Honeypod Alerts
 
+Assume you have a real-world microservice application called ```storefront``` (if not, add it to your cluster)
+```
+kubectl apply -f https://installer.calicocloud.io/storefront-demo.yaml
+```
 
+Once created, create the ```attacker-app``` pod in the ```storefront``` namespace
+```
+kubectl delete -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
+```
 
+This will attempt to probe as many pods as possible - including the ```tigera-internal``` namespaced pods
 
 
 ## Miscellaneous Junk
