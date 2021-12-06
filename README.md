@@ -192,6 +192,11 @@ kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/expose-svc.
 ```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/vuln-svc.yaml 
 ```
+
+![Screenshot 2021-12-06 at 10 58 40](https://user-images.githubusercontent.com/82048393/144834860-f5ec5d0a-3a47-439f-9bb5-438326e78669.png)
+
+
+
 ```
 kubectl get pods -n tigera-internal
 ```
