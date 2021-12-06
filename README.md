@@ -177,6 +177,7 @@ Similarly, when you need to work on this test cluster again, you can re-scale th
 gcloud container clusters resize nigel-gke-cluster --zone=europe-west2-a --num-nodes=3
 ```
 
+## Honeypods
 ```
 kubectl apply -f https://docs.tigera.io/manifests/threatdef/honeypod/common.yaml 
 ```
@@ -218,7 +219,7 @@ kubectl delete secret tigera-pull-secret -n tigera-internal
 
 
 
-
+## Miscellaneous Junk
 
 On your local Linux or macOS computer, you can use the ssh-keygen command to retrieve the public key for your key pair.
 ```
