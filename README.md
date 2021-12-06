@@ -237,6 +237,20 @@ Confirm the new attacker app exists within the Storefront namespace:
 kubectl get storefront -A
 ```
 
+This should be visible in our Service Graph:
+
+![Screenshot 2021-12-06 at 11 14 27](https://user-images.githubusercontent.com/82048393/144836841-df7cf026-7c77-4b0c-bc4b-4a50291a30db.png)
+
+Especially when you drill-down to the tigera-internal namespace:
+
+![Screenshot 2021-12-06 at 11 15 27](https://user-images.githubusercontent.com/82048393/144836882-de1a4d4c-d309-4442-9298-98042dcb1352.png)
+
+Once you've completed your tests, proceed to remove the attacker app deployment:
+
+```
+kubectl delete -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
+```
+
 
 ## Miscellaneous Junk
 
