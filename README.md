@@ -254,6 +254,11 @@ kubectl delete -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 
 ## Miscellaneous Junk
 
+Ignore fixed dependency issues
+```
+kubectl annotate ds -n calico-system calico-node unsupported.operator.tigera.io/ignore="true"
+```
+
 On your local Linux or macOS computer, you can use the ssh-keygen command to retrieve the public key for your key pair.
 ```
 ssh-keygen -y -f nigel-rancher-key.pem
